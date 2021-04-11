@@ -1,0 +1,25 @@
+{
+    "name": "gdt",
+    "displayName": "GDT",
+    "description": "GDT Language Support for Visual Studio Code",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.55.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "gdt",
+            "aliases": ["GDT", "gdt"],
+            "extensions": [".gdt",".GDT"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "gdt",
+            "scopeName": "source.gdt",
+            "path": "./syntaxes/gdt.tmLanguage.json"
+        }]
+    }
+}
