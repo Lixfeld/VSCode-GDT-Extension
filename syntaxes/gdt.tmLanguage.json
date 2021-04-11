@@ -1,32 +1,54 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "GDT",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.gdt",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.gdt",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.gdt",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "source.gdt"
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "GDT",
+  "patterns": [
+    {
+      "include": "#record-type"
+    },
+    {
+      "include": "#patient-data"
+    },
+    {
+      "include": "#structure"
+    }
+  ],
+  "repository": {
+    "structure": {
+      "patterns": [
+        {
+          "match": "^(.{3})(.{4})(.*)",
+          "captures": {
+            "1": { "name": "variable.gdt" },
+            "2": { "name": "keyword.gdt" },
+            "3": { "name": "string.gdt" }
+          }
+        }
+      ]
+    },
+    "patient-data": {
+      "patterns": [
+        {
+          "match": "^(.{3})(3.{3})(.*)",
+          "captures": {
+            "1": { "name": "variable.gdt" },
+            "2": { "name": "keyword.control.gdt" },
+            "3": { "name": "string.gdt" }
+          }
+        }
+      ]
+    },
+    "record-type": {
+      "patterns": [
+        {
+          "match": "^(.{3})(8000)(6300|6301|6302|6303|6310|6311)",
+          "captures": {
+            "1": { "name": "variable.gdt" },
+            "2": { "name": "keyword.gdt" },
+            "3": { "name": "constant.character.escape.gdt" }
+          }
+        }
+      ]
+    }
+  },
+  "scopeName": "source.gdt"
 }
