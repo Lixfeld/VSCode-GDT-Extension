@@ -10,4 +10,4 @@ Different colors for GDT segments:
 - Field identifier
 - Data content
 
-![Syntax_highlighting_Screenshoot](images/Syntax_highlighting.PNG)  
+![Syntax_highlighting_Screenshoot](https://github.com/Lixfeld/VSCode-GDT-Extension/raw/master/images/Syntax_highlighting.PNG)  
