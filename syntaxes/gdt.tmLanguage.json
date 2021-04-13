@@ -9,6 +9,9 @@
       "include": "#patient-data"
     },
     {
+      "include": "#comment"
+    },
+    {
       "include": "#structure"
     }
   ],
@@ -16,7 +19,7 @@
     "structure": {
       "patterns": [
         {
-          "match": "^(.{3})(.{4})(.*)",
+          "match": "^(\\d{3})(\\d{4})(.*)",
           "captures": {
             "1": { "name": "variable.gdt" },
             "2": { "name": "keyword.gdt" },
@@ -28,7 +31,7 @@
     "patient-data": {
       "patterns": [
         {
-          "match": "^(.{3})(3.{3})(.*)",
+          "match": "^(\\d{3})(3\\d{3})(.*)",
           "captures": {
             "1": { "name": "variable.gdt" },
             "2": { "name": "keyword.control.gdt" },
@@ -40,11 +43,23 @@
     "record-type": {
       "patterns": [
         {
-          "match": "^(.{3})(8000)(6300|6301|6302|6303|6310|6311)",
+          "match": "^(\\d{3})(8000)(6300|6301|6302|6303|6310|6311)",
           "captures": {
             "1": { "name": "variable.gdt" },
             "2": { "name": "keyword.gdt" },
             "3": { "name": "constant.character.escape.gdt" }
+          }
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        {
+          "match": "^(\\d{3})(6227|6228)(.*)",
+          "captures": {
+            "1": { "name": "variable.gdt" },
+            "2": { "name": "keyword.gdt" },
+            "3": { "name": "comment.gdt" }
           }
         }
       ]
