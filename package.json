@@ -4,6 +4,7 @@
     "description": "GDT Language Support for Visual Studio Code",
     "version": "1.0.0",
     "publisher": "Lixfeld",
+    "icon": "images/Logo.png",
     "license": "MIT",
     "repository": {
 		"type": "git",
