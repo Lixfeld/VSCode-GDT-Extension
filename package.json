@@ -16,6 +16,10 @@
     "categories": [
         "Programming Languages"
     ],
+    "activationEvents": [
+        "onLanguage:gdt"
+	],
+	"main": "./extension.js",
     "contributes": {
         "languages": [{
             "id": "gdt",
@@ -26,6 +30,21 @@
             "language": "gdt",
             "scopeName": "source.gdt",
             "path": "./syntaxes/gdt.tmLanguage.json"
-        }]
+        }],
+        "configuration": {
+            "title": "GDT",
+            "properties": {
+                "gdt.Language": {
+                    "type": "string",
+                    "default": "English",
+                    "enum": ["German", "English"],
+                    "description": "Language for field/tooltip descriptions"
+                }
+            }
+        }
+    },
+    "scripts": {},
+	"devDependencies": {
+		"@types/vscode": "^1.32.0"
     }
 }
