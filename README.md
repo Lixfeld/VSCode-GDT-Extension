@@ -43,3 +43,11 @@ Example:
     }
 }
 ```
+### Tooltip descriptions
+English and german tooltips descriptions for field and record types:  
+
+![Tooltip_Screenshoot](https://github.com/Lixfeld/VSCode-GDT-Extension/raw/master/images/images/Tooltip.PNG)  
+
+The descriptions should load and update automatically for GDT files but you can also run the command manually (`F1`).
+
+**Select language:** File -> Preferences -> Settings -> Extensions -> GDT  
