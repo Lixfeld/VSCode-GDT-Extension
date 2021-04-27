@@ -26,6 +26,10 @@
 			{
 				"command": "gdt.LoadDescriptions",
 				"title": "GDT: Load field and record type descriptions"
+			},
+            {
+				"command": "gdt.FixLengthVariables",
+				"title": "GDT: Fix length of line variables"
 			}
 		],
         "languages": [{

@@ -3,10 +3,12 @@ const vscode = require('vscode');
 
 // Imports
 const LoadDescriptions = require('./lib/LoadDescriptions.js');
+const FixLengthVariables = require('./lib/FixLengthVariables.js');
 
 // Constants
 const GDT = 'gdt';
 const LoadDescriptionsCommand = 'gdt.LoadDescriptions';
+const FixLengthVariablesCommand = 'gdt.FixLengthVariables';
 
 // Variables
 var workspace = vscode.workspace;
@@ -18,7 +20,14 @@ var workspace = vscode.workspace;
 function activate(context) {
 	console.log('Activating GDT extension');
 
-	// Register command
+	// Register commands:
+	var fixLengthVariablesCommand = vscode.commands.registerCommand(FixLengthVariablesCommand, function () {
+		console.log('FixLengthVariablesCommand called');
+		var document = GetActiveGdtDocument();
+		FixLengthVariables.ShowResult(document);		
+	});
+	context.subscriptions.push(fixLengthVariablesCommand);
+	
 	var loadDescriptionsCommand = vscode.commands.registerCommand(LoadDescriptionsCommand, function () {
 		console.log('LoadDescriptionsCommand called');
 		var document = GetActiveGdtDocument();
