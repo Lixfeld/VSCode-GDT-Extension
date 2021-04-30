@@ -24,10 +24,10 @@ function activate(context) {
 	var fixLengthVariablesCommand = vscode.commands.registerCommand(FixLengthVariablesCommand, function () {
 		console.log('FixLengthVariablesCommand called');
 		var document = GetActiveGdtDocument();
-		FixLengthVariables.ShowResult(document);		
+		FixLengthVariables.ShowResult(document);
 	});
 	context.subscriptions.push(fixLengthVariablesCommand);
-	
+
 	var loadDescriptionsCommand = vscode.commands.registerCommand(LoadDescriptionsCommand, function () {
 		console.log('LoadDescriptionsCommand called');
 		var document = GetActiveGdtDocument();
@@ -58,7 +58,7 @@ function activate(context) {
 	 * Get TextDocument with GDT LanguageID
 	 * @returns {vscode.TextDocument} document
 	 */
-	 function GetActiveGdtDocument() {
+	function GetActiveGdtDocument() {
 		var activeTextEditor = vscode.window.activeTextEditor;
 		if (activeTextEditor && activeTextEditor.document.languageId == GDT)
 			return activeTextEditor.document;
