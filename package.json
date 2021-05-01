@@ -2,7 +2,7 @@
     "name": "gdt",
     "displayName": "GDT",
     "description": "GDT Language Support for Visual Studio Code",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "publisher": "Lixfeld",
     "icon": "images/Logo.png",
     "license": "MIT",
