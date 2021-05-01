@@ -30,6 +30,10 @@
             {
 				"command": "gdt.FixLengthVariables",
 				"title": "GDT: Fix length of line variables"
+			},
+            {
+				"command": "gdt.DisplayMessage",
+				"title": "GDT: Display message with descriptions"
 			}
 		],
         "languages": [{
