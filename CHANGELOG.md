@@ -2,6 +2,10 @@
 
 All notable changes to the "gdt" extension will be documented in this file.
 
+## 1.2.1
+- Fix: Display message (command) with non-default field types
+- Add german header for message output
+
 ## 1.2.0
 - New command: Output message with fields and descriptions
 - New command: Fix length of line variables
