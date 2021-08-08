@@ -1,4 +1,4 @@
-var recordTypes = {
+export const recordTypes: {[key: string]: string} = {
     '6300': 'Stammdaten anfordern',
     '6301': 'Stammdaten übermitteln',
     '6302': 'Neue Untersuchung anfordern',
@@ -7,7 +7,7 @@ var recordTypes = {
     '6311': 'Daten einer Untersuchung zeigen'
 }
 
-var fieldTypes = {
+export const fieldIdentifiers: {[key: string]: string} = {
     '0102': 'Softwareverantwortlicher (SV)',
     '0103': 'Software',
     '0132': 'Release-Stand der Software',
@@ -178,6 +178,3 @@ var fieldTypes = {
     '9206': 'Verwendeter Zeichensatz',
     '9218': 'GDT Version'
 }
-
-exports.recordTypes = recordTypes;
-exports.fieldTypes = fieldTypes;
