@@ -2,6 +2,10 @@
 
 All notable changes to the "gdt" extension will be documented in this file.
 
+## 2.0.0
+- New Option: Add custom field identifiers and record types
+- Converting existing JavaScript to TypeScript
+
 ## 1.2.1
 - Fix: Display message (command) with non-default field types
 - Add german header for message output
