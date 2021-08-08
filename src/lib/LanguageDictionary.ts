@@ -7,6 +7,8 @@ import * as EnglishDictionary from './EnglishDictionary';
 const GDT = 'gdt';
 const German = 'German';
 const Language = 'Language';
+const CustomRecordTypes = 'CustomRecordTypes';
+const CustomFieldIdentifiers = 'CustomFieldIdentifiers';
 export const RecordIdentification = '8000';
 
 interface LanguageDictionary {
@@ -19,6 +21,11 @@ interface LanguageDictionary {
  */
 export function GetFieldTypeDescription(key: string): string {
     let languageDictionary = GetLanguageDictionary();
+    let customFieldIdentifiers = vscode.workspace.getConfiguration(GDT)[CustomFieldIdentifiers];
+
+    // Copy custom field identifiers and overwrite existing ones
+    Object.assign(languageDictionary.fieldIdentifiers, customFieldIdentifiers);    
+
     let fieldIdentifiers = languageDictionary.fieldIdentifiers;
     return fieldIdentifiers[key];
 }
@@ -28,6 +35,11 @@ export function GetFieldTypeDescription(key: string): string {
  */
  export function GetRecordTypeDescription(key: string): string {
     let languageDictionary = GetLanguageDictionary();
+    let customRecordTypes = vscode.workspace.getConfiguration(GDT)[CustomRecordTypes];
+
+    // Copy custom record types and overwrite existing ones
+    Object.assign(languageDictionary.recordTypes, customRecordTypes);
+
     let recordTypes = languageDictionary.recordTypes;
     return recordTypes[key];
 }

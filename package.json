@@ -54,7 +54,23 @@
                     "default": "English",
                     "enum": ["German", "English"],
                     "description": "Language for field/tooltip descriptions"
-                }
+                },
+                "gdt.CustomRecordTypes": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "default": {},
+                    "description": "Add new record types or overwrite existing ones"
+                },
+                "gdt.CustomFieldIdentifiers": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "default": {},
+                    "description": "Add new field identifiers or overwrite existing ones"
+                }            
             }
         }
     },

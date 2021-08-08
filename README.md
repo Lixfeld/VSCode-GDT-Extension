@@ -43,19 +43,21 @@ Example:
     }
 }
 ```
-### Tooltip descriptions
-English and german tooltip descriptions for field and record types:  
+### Field identifiers and record types
+**Select language and add custom descriptions or overwrite existing ones:**   
+File -> Preferences -> Settings -> Extensions -> GDT  
+
+**Tooltip descriptions**  
+English and german tooltip descriptions for field identifiers and record types:  
 
 ![Tooltip_Screenshoot](https://github.com/Lixfeld/VSCode-GDT-Extension/raw/master/images/Tooltip.PNG)  
 
 The descriptions should load and update automatically for GDT files but you can also run the command manually.  
 
-**Select language:** File -> Preferences -> Settings -> Extensions -> GDT  
-
-### Fix length of line
-A command to change the length of line variables (first three digits) to the actual line length **(including whitespaces) + 2** (*CR LF*).
-
-### Display message
+**Display message**  
 Show messsage with fields and descriptions in output channel:
 
 ![Output_channel_Screenshoot](https://github.com/Lixfeld/VSCode-GDT-Extension/raw/master/images/Output_channel.PNG)  
+
+### Fix length of line
+A command to change the length of line variables (first three digits) to the actual line length **(including whitespaces) + 2** (*CR LF*).
