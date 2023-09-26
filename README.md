@@ -1,6 +1,7 @@
 # GDT Language Support (**G**eräte-**D**aten-**T**räger)
 
-Visual Studio Code extension for GDT files.
+Visual Studio Code extension for GDT files.  
+Download from [Visual Studio Marketplace][1], [Open VSX][2] or [GitHub][3].
 
 ## Features
 ### Syntax highlighting
@@ -61,3 +62,7 @@ Show messsage with fields and descriptions in output channel:
 
 ### Fix length of line
 A command to change the length of line variables (first three digits) to the actual line length **(including whitespaces) + 2** (*CR LF*).
+
+[1]: https://marketplace.visualstudio.com/items?itemName=Lixfeld.gdt
+[2]: https://open-vsx.org/extension/Lixfeld/gdt
+[3]: https://github.com/Lixfeld/VSCode-GDT-Extension/releases
