@@ -8,6 +8,7 @@ export const recordTypes: {[key: string]: string} = {
 }
 
 export const fieldIdentifiers: {[key: string]: string} = {
+    '0001': 'Version of the record description', // Version 3.5
     '0102': 'Person/company responsible for software',
     '0103': 'Software',
     '0132': 'Release stage of software',
@@ -120,6 +121,9 @@ export const fieldIdentifiers: {[key: string]: string} = {
     '8003': 'End of object',    // Version 3.1
     '8004': 'Record length',    // Version 3.1
     '8100': 'Record length',
+    '8112': 'Request (object attribute → Obj_0012)', // Version 3.5
+    '8133': 'Header data GDT (object attribute → Obj_0033)', // Version 3.5
+    '8157': 'Examination result GDT (object attribute → Obj_0057)', // Version 3.5
     '8200': 'ObjektIdent',
     '8201': 'End of object',
     '8202': 'End of record',
