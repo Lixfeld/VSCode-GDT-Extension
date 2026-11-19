@@ -1,7 +1,7 @@
 {
     "name": "gdt",
     "displayName": "GDT",
-    "description": "GDT Language Support for Visual Studio Code",
+    "description": "GDT, LDT and KVDT Language Support for Visual Studio Code",
     "version": "2.0.0",
     "publisher": "Lixfeld",
     "icon": "images/Logo.PNG",
@@ -18,6 +18,8 @@
     ],
     "activationEvents": [
         "onLanguage:gdt",
+        "onLanguage:ldt",
+        "onLanguage:kvdt",
 		"onCommand:gdt.LoadDescriptions"
 	],
 	"main": "./out/extension.js",
@@ -40,12 +42,51 @@
             "id": "gdt",
             "aliases": ["GDT", "gdt"],
             "extensions": [".gdt",".GDT"]
+        },
+        {
+            "id": "ldt",
+            "aliases": ["LDT", "ldt"],
+            "extensions": [".ldt",".LDT"],
+            "firstLine": "^\\d{3}8000(8220|8230)"
+        },
+        {
+            "id": "kvdt",
+            "aliases": ["KVDT", "kvdt"],
+            "extensions": [".con",".CON"],
+            "firstLine": "^\\d{3}8000con0"
         }],
         "grammars": [{
             "language": "gdt",
             "scopeName": "source.gdt",
             "path": "./syntaxes/gdt.tmLanguage.json"
+        },
+        {
+            "language": "ldt",
+            "scopeName": "source.ldt",
+            "path": "./syntaxes/ldt.tmLanguage.json"
+        },
+        {
+            "language": "kvdt",
+            "scopeName": "source.kvdt",
+            "path": "./syntaxes/kvdt.tmLanguage.json"
         }],
+        "configurationDefaults": {
+            "[gdt]": {
+                "files.encoding": "iso885915",
+                "files.eol": "\r\n",
+                "files.trimTrailingWhitespace": false
+            },
+            "[ldt]": {
+                "files.encoding": "iso885915",
+                "files.eol": "\r\n",
+                "files.trimTrailingWhitespace": false
+            },
+            "[kvdt]": {
+                "files.encoding": "iso885915",
+                "files.eol": "\r\n",
+                "files.trimTrailingWhitespace": false
+            }
+        },
         "configuration": {
             "title": "GDT",
             "properties": {

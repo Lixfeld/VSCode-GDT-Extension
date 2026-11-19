@@ -43,7 +43,7 @@
     "record-type": {
       "patterns": [
         {
-          "match": "^(\\d{3})(8000)(6300|6301|6302|6303|6310|6311)",
+          "match": "^(\\d{3})(8000|8001)(\\w{4,5})",
           "captures": {
             "1": { "name": "variable.gdt" },
             "2": { "name": "keyword.gdt" },

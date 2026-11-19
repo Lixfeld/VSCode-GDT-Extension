@@ -3,9 +3,9 @@ import * as vscode from 'vscode';
 import * as LoadDescriptions from './lib/LoadDescriptions';
 import * as FixLengthVariables from './lib/FixLengthVariables';
 import * as DisplayMessage from './lib/DisplayMessage';
+import { SupportedLanguageIds } from './lib/LanguageDictionary';
 
 // Constants
-const GDT = 'gdt';
 const LoadDescriptionsCommand = 'gdt.LoadDescriptions';
 const FixLengthVariablesCommand = 'gdt.FixLengthVariables';
 const DisplayMessageCommand = 'gdt.DisplayMessage';
@@ -67,7 +67,7 @@ export function activate(context: vscode.ExtensionContext) {
 	 */
 	function GetActiveGdtDocument(): vscode.TextDocument | undefined {
 		let activeTextEditor = vscode.window.activeTextEditor;
-		if (activeTextEditor && activeTextEditor.document.languageId == GDT)
+		if (activeTextEditor && SupportedLanguageIds.includes(activeTextEditor.document.languageId))
 			return activeTextEditor.document;
 		else
 			return undefined;

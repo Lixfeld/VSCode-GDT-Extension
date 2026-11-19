@@ -1,0 +1,69 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "KVDT",
+  "patterns": [
+    {
+      "include": "#record-type"
+    },
+    {
+      "include": "#patient-data"
+    },
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#structure"
+    }
+  ],
+  "repository": {
+    "structure": {
+      "patterns": [
+        {
+          "match": "^(\\d{3})(\\d{4})(.*)",
+          "captures": {
+            "1": { "name": "variable.kvdt" },
+            "2": { "name": "keyword.kvdt" },
+            "3": { "name": "string.kvdt" }
+          }
+        }
+      ]
+    },
+    "patient-data": {
+      "patterns": [
+        {
+          "match": "^(\\d{3})(3\\d{3})(.*)",
+          "captures": {
+            "1": { "name": "variable.kvdt" },
+            "2": { "name": "keyword.control.kvdt" },
+            "3": { "name": "string.kvdt" }
+          }
+        }
+      ]
+    },
+    "record-type": {
+      "patterns": [
+        {
+          "match": "^(\\d{3})(8000|8001)(\\w{4,5})",
+          "captures": {
+            "1": { "name": "variable.kvdt" },
+            "2": { "name": "keyword.kvdt" },
+            "3": { "name": "constant.character.escape.kvdt" }
+          }
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        {
+          "match": "^(\\d{3})(6227|6228)(.*)",
+          "captures": {
+            "1": { "name": "variable.kvdt" },
+            "2": { "name": "keyword.kvdt" },
+            "3": { "name": "comment.kvdt" }
+          }
+        }
+      ]
+    }
+  },
+  "scopeName": "source.kvdt"
+}

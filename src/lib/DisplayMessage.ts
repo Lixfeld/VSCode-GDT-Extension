@@ -27,7 +27,7 @@ export function ShowOutput(document: vscode.TextDocument): void {
         if (matches != null) {
             let fieldType = matches[1];
             fieldIdentifiers.push(fieldType);
-            let description = LanguageDictionary.GetFieldTypeDescription(fieldType);
+            let description = LanguageDictionary.GetFieldTypeDescription(fieldType, document.languageId);
             if (description === undefined)
                 description = '';
 
@@ -36,7 +36,7 @@ export function ShowOutput(document: vscode.TextDocument): void {
             // Content / Record type + description
             let content = matches[2];
             if (fieldType == LanguageDictionary.RecordIdentification) {
-                let recordDescription = LanguageDictionary.GetRecordTypeDescription(content);
+                let recordDescription = LanguageDictionary.GetRecordTypeDescription(content, document.languageId);
                 if (recordDescription !== undefined)
                     content = content + ` (${recordDescription})`;
             }
@@ -50,7 +50,7 @@ export function ShowOutput(document: vscode.TextDocument): void {
  * Print lines to output channel
  */
 function Print(fieldIdentifiers: string[], descriptions: string[], contents:string[]): void {
-    const outputChannel = vscode.window.createOutputChannel('GDT Message');
+    const outputChannel = vscode.window.createOutputChannel('xDT Message');
     outputChannel.clear();
 
     // Get max length to align contents
